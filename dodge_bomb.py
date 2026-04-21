@@ -40,8 +40,8 @@ def main():
     pg.draw.circle(bb_img,(255,0,0),(10,10),10)
     bb_img.set_colorkey((0, 0, 0))
     bb_rct = bb_img.get_rect()
-    bb_rct.center = random.randint(0,WIDTH), random.randint(0,HEIGHT)
-    vx, vy = +5, +5
+    bb_rct.center = random.randint(0,WIDTH), random.randint(0,HEIGHT)  
+    vx, vy = +5, +5  # 爆弾の速度
 
     clock = pg.time.Clock()
     tmr = 0
@@ -49,6 +49,8 @@ def main():
         for event in pg.event.get():
             if event.type == pg.QUIT: 
                 return
+        if kk_rct.colliderect(bb_rct):  #こうかとんと爆弾の衝突判定
+            return  # ゲームオーバーの意味でmain関数からでる
         screen.blit(bg_img, [0, 0]) 
 
         key_lst = pg.key.get_pressed()
