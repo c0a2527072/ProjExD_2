@@ -40,16 +40,13 @@ def gameover(screen: pg.Surface) -> None:
     txt = fonto.render("Game Over",True, (255, 255, 255))
     screen.blit(txt, [300, 200])
 
-    black_img = pg.image.load("fig/3.png")
-    screen.blit(black_img, [250,200])
-    black_img = pg.image.load("fig/3.png")
-    screen.blit(black_img, [620,200])
+    gazou_img = pg.image.load("fig/3.png")
+    screen.blit(gazou_img, [250,200])
+    gazou_img = pg.image.load("fig/3.png")
+    screen.blit(gazou_img, [620,200])
 
     pg.display.update()
     time.sleep(5)
-
-
-
 
 
 
